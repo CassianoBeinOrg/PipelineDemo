@@ -12,10 +12,7 @@ pipeline {
         }
         stage('Build Backend') {
           agent {
-            node {
-              label 'nodejs-app'
-            }
-
+            label 'nodejs-app'
           }
           steps {
             echo 'Build done'
