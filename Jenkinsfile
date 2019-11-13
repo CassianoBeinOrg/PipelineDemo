@@ -2,10 +2,25 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      agent any
-      steps {
-        echo 'Build with JDK8'
-        sh 'java -version'
+      parallel {
+        stage('Build Frontend') {
+          agent any
+          steps {
+            echo 'Build with JDK8'
+            sh 'java -version'
+          }
+        }
+        stage('Build Backend') {
+          agent {
+            node {
+              label 'nodejs-app'
+            }
+
+          }
+          steps {
+            echo 'Build done'
+          }
+        }
       }
     }
     stage('Test UI') {
