@@ -16,21 +16,25 @@ pipeline {
     stage('Test UI') {
       parallel {
         stage('Test UI') {
+          agent any
           steps {
             echo 'test done'
           }
         }
         stage('Test Backend APIs') {
+          agent any
           steps {
             echo 'test done'
           }
         }
         stage('Test 3rd party APIs') {
+          agent any
           steps {
             echo 'test done'
           }
         }
         stage('Test Dependencies') {
+          agent any
           steps {
             echo 'test done'
           }
@@ -40,11 +44,13 @@ pipeline {
     stage('Deploy to Performance Env') {
       parallel {
         stage('Deploy to Performance Env') {
+          agent any
           steps {
             echo 'deploy done'
           }
         }
         stage('Performance test') {
+          agent any
           steps {
             sleep 15
           }
@@ -57,6 +63,7 @@ pipeline {
       }
     }
     stage('Deploy to Prod') {
+      agent any
       steps {
         echo 'Deploy done !'
       }
