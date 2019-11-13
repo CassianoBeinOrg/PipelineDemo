@@ -2,12 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      agent {
-        node {
-          label 'jdk8'
-        }
-
-      }
+      agent any
       steps {
         echo 'Build with JDK8'
         sh 'java -version'
