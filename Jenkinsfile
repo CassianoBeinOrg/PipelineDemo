@@ -14,24 +14,28 @@ pipeline {
           agent any
           steps {
             echo 'test done'
+            sleep 15
           }
         }
         stage('Test Backend APIs') {
           agent any
           steps {
             echo 'test done'
+            sleep 15
           }
         }
         stage('Test 3rd party APIs') {
           agent any
           steps {
             echo 'test done'
+            sleep 15
           }
         }
         stage('Test Dependencies') {
           agent any
           steps {
             echo 'test done'
+            sleep 15
           }
         }
       }
@@ -47,7 +51,7 @@ pipeline {
         stage('Performance test') {
           agent any
           steps {
-            sleep 15
+            sleep 30
           }
         }
       }
